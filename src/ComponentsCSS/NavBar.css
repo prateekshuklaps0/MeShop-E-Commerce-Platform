@@ -1,0 +1,109 @@
+/* 
+  font-family: -apple-system, "Helvetica Neue", sans-serif, "Mier Book";
+  color: rgb(244, 51, 151);
+ */
+
+/* Nav Bar Container */
+.navCont {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: white;
+  z-index: 1000;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
+}
+
+/* Upper Nav Bar Container */
+.upperNaV {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+  border: none;
+  padding: 0 70px;
+  border-bottom: 1px solid rgb(211, 210, 210);
+}
+/* Upper Nav Bar Left Elements */
+.upperNav_left {
+  min-width: 43.5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+/* meShop Logo */
+.meshopLogo {
+  font-family: "Merienda", cursive;
+  font-weight: bold;
+  font-size: 32px;
+  color: rgb(244, 51, 151);
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+/* Search Form in Nav Bar */
+.navSearchForm {
+  display: flex;
+  align-items: center;
+  border: 1px solid rgb(147, 147, 147);
+  border-radius: 4px;
+  min-width: 72%;
+  padding: 10px 15px;
+}
+
+.navSearchForm svg {
+  width: 22px;
+  height: 22px;
+}
+
+.navSearchForm svg path {
+  fill: rgb(147, 147, 147);
+}
+
+.navSearchForm input {
+  width: 100%;
+  margin-left: 10px;
+}
+
+.navSearchForm input::placeholder {
+  font-family: -apple-system, "Helvetica Neue", sans-serif, "Mier Book";
+  font-size: 15.5px;
+  color: rgb(147, 147, 147);
+}
+
+.navSearchForm input:focus {
+  outline: none;
+  border: none;
+  caret-color: rgb(244, 51, 151);
+  color: black;
+}
+
+.navSearchForm button {
+  color: rgb(128, 128, 128);
+  font-weight: 600;
+  font-size: 16px;
+}
+
+/* Upper Nav Right Elements */
+.upperNav_right {
+  width: 30%;
+  border: 1px solid green;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navTop_right_conts {
+  display: flex;
+}
+
+.download_app svg path {
+  fill: #ff0000;
+}
+
+/* Category Nav Css */
+.cateNav {
+  height: 30px;
+}

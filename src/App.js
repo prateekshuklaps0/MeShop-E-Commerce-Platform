@@ -1,28 +1,25 @@
 import "./App.css";
-import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
+import React from "react";
+import { Routes, Route, NavLink } from "react-router-dom";
+
+// Pages
+import Landing from "./Pages/LandingPage";
+// ******************
 
 function App() {
   return (
     <div className="App">
-      <Tabs>
-        <TabList>
-          <Tab>One</Tab>
-          <Tab>Two</Tab>
-          <Tab>Three</Tab>
-        </TabList>
+      {/* Routes */}
+      <Routes>
+        <Route exact path="/" element={<Landing />} />
+      </Routes>
+      {/* ******************** */}
 
-        <TabPanels>
-          <TabPanel>
-            <p>one!</p>
-          </TabPanel>
-          <TabPanel>
-            <p>two!</p>
-          </TabPanel>
-          <TabPanel>
-            <p>three!</p>
-          </TabPanel>
-        </TabPanels>
-      </Tabs>
+      <div
+        style={{ backgroundColor: "Red", height: "500px", marginTop: "200px" }}
+      >
+        Test Div
+      </div>
     </div>
   );
 }
