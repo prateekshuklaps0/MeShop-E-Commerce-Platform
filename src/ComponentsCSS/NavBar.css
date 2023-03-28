@@ -88,17 +88,11 @@
 
 /* Upper Nav Right Elements */
 .upperNav_right {
-  width: 45%;
-  border: 1px solid red;
+  width: 41%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-right: 30px;
-}
-
-.navTop_right_conts {
-  display: flex;
-  border: 1px solid blue;
+  height: 70px;
 }
 
 /* Download App */
@@ -107,7 +101,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 69px;
+  height: 100%;
   border-bottom: 3px solid transparent;
 }
 .download_app:hover {
@@ -153,15 +147,19 @@
 
 /* Profile and Cart Container */
 .profile_cart_cont {
+  min-width: 135px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 100%;
 }
 /* Profile */
 .profileCont {
-  height: 69px;
+  padding-top: 15px;
+  height: 100%;
   cursor: pointer;
-  border-bottom: 1px solid transparent;
+  width: 80px;
+  border-bottom: 3px solid transparent;
 }
 .profileCont:hover {
   color: rgb(244, 51, 151);
@@ -185,12 +183,11 @@
 
 /* Cart */
 .cartDiv {
-  height: 69px;
+  padding-top: 15px;
+  height: 100%;
   cursor: pointer;
-  border-bottom: 1px solid transparent;
-  display: flex;
-  /* justify-content: center; */
-  flex-direction: column;
+  width: 80px;
+  border-bottom: 3px solid transparent;
 }
 .cartDiv:hover {
   color: rgb(244, 51, 151);
@@ -214,5 +211,34 @@
 
 /* Category Nav Css */
 .cateNav {
-  height: 30px;
+  height: 50px;
+  width: 100%;
+  background: white;
+  border-bottom: 2px solid rgb(219, 219, 219);
+  padding-top: 5px;
+}
+.navCateCont {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  margin: auto;
+}
+.navCateDivs {
+  height: 100%;
+  border-bottom: 3px solid transparent;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.navCateDivs:hover {
+  color: rgb(244, 51, 151);
+  border-bottom-color: rgb(244, 51, 151);
+}
+.navCateDivs p {
+  font-family: -apple-system, "Helvetica Neue", sans-serif, "Mier Book";
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
 }

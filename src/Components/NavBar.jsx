@@ -2,6 +2,32 @@ import "../ComponentsCSS/NavBar.css";
 import { NavLink } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
 
+const navCateTitle = [
+  "Women Ethnic",
+  "Women Western",
+  "Men",
+  "Kids",
+  "Home & Kitchen",
+  "Beauty & Health",
+  "Jewellery & Accessories",
+  "Bags & Footwear",
+  "Electronics",
+];
+
+function NavCateTitle() {
+  return (
+    <div className="navCateCont">
+      {navCateTitle.map((item, ind) => {
+        return (
+          <div className="navCateDivs" key={ind + item[1]}>
+            <p>{item}</p>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
 function NavBar() {
   // Nav Bar Search Input
   const navSearchInpRef = useRef(null);
@@ -175,7 +201,7 @@ function NavBar() {
       {/*  */}
 
       {/* Nav Bar Lower Part */}
-      <div className="cateNav"></div>
+      <div className="cateNav">{<NavCateTitle />}</div>
       {/*  */}
     </nav>
   );
