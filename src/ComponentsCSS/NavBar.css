@@ -48,7 +48,7 @@
   display: flex;
   align-items: center;
   border: 1px solid rgb(147, 147, 147);
-  border-radius: 4px;
+  border-radius: 5px;
   min-width: 72%;
   padding: 10px 15px;
 }
@@ -88,19 +88,128 @@
 
 /* Upper Nav Right Elements */
 .upperNav_right {
-  width: 30%;
-  border: 1px solid green;
+  width: 45%;
+  border: 1px solid red;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-right: 30px;
 }
 
 .navTop_right_conts {
   display: flex;
+  border: 1px solid blue;
 }
 
-.download_app svg path {
-  fill: #ff0000;
+/* Download App */
+.download_app {
+  min-width: 142px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 69px;
+  border-bottom: 3px solid transparent;
+}
+.download_app:hover {
+  border-bottom-color: rgb(244, 51, 151);
+  color: rgb(244, 51, 151);
+}
+.download_app svg {
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+.download_app:hover svg path {
+  fill: rgb(244, 51, 151);
+}
+.download_app p {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+/* Become a Supplier */
+.supplierCont {
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-left: 3px solid rgb(211, 210, 210);
+  border-right: 3px solid rgb(211, 210, 210);
+  padding: 0 23px;
+}
+.supplierCont p:hover {
+  color: rgb(244, 51, 151);
+}
+.supplierCont p {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+/* Profile and Cart Container */
+.profile_cart_cont {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+/* Profile */
+.profileCont {
+  height: 69px;
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+}
+.profileCont:hover {
+  color: rgb(244, 51, 151);
+  border-bottom-color: rgb(244, 51, 151);
+}
+.profileCont svg {
+  height: 20px;
+  width: 20px;
+  margin: auto;
+}
+.profileCont:hover svg path {
+  fill: rgb(244, 51, 151);
+}
+.profileCont p {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  margin: auto;
+}
+
+/* Cart */
+.cartDiv {
+  height: 69px;
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column;
+}
+.cartDiv:hover {
+  color: rgb(244, 51, 151);
+  border-bottom-color: rgb(244, 51, 151);
+}
+.cartDiv svg {
+  height: 20px;
+  width: 20px;
+  margin: auto;
+}
+.cartDiv:hover svg path {
+  stroke: rgb(244, 51, 151);
+}
+.cartDiv p {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  margin: auto;
 }
 
 /* Category Nav Css */

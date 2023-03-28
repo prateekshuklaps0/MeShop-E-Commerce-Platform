@@ -98,13 +98,13 @@ function NavBar() {
             <p>Download App</p>
           </div>
           {/* Become a Supplier Element */}
-          <div className="navTop_right_conts">
+          <div className="navTop_right_conts supplierCont">
             <p>Become a Supplier</p>
           </div>
           {/* Login and Cart Container */}
-          <div className="navTop_right_conts">
+          <div className="navTop_right_conts profile_cart_cont">
             {/* Login Link Element */}
-            <NavLink>
+            <div className="profileCont">
               <svg
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
@@ -129,9 +129,10 @@ function NavBar() {
                 </defs>
               </svg>
               <p>Profile</p>
-            </NavLink>
+            </div>
+
             {/* Cart Link Element */}
-            <NavLink>
+            <div className="cartDiv">
               <svg
                 viewBox="0 0 20 20"
                 fill="none"
@@ -165,12 +166,13 @@ function NavBar() {
                 ></ellipse>
               </svg>
               <p>Cart</p>
-            </NavLink>
+            </div>
           </div>
           {/*  */}
         </div>
         {/*  */}
       </div>
+      {/*  */}
 
       {/* Nav Bar Lower Part */}
       <div className="cateNav"></div>
