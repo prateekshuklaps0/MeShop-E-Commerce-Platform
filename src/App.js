@@ -14,6 +14,12 @@ function App() {
         <Route exact path="/" element={<Landing />} />
       </Routes>
       {/* ******************** */}
+
+      <div
+        style={{ backgroundColor: "Red", height: "500px", marginTop: "200px" }}
+      >
+        Test Div
+      </div>
     </div>
   );
 }
