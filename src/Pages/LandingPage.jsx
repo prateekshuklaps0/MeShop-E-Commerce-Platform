@@ -1,8 +1,10 @@
+import NavBar from "../Components/NavBar";
+
 function Landing() {
-  document.title = "Landing";
+  document.title = `Online Shopping Site for Fashion, Electronics, Home and More | meShop`;
   return (
     <div>
-      <h1 className="land">Landing Page</h1>
+      <NavBar />
     </div>
   );
 }
