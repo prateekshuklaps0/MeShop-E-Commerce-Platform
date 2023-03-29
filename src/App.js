@@ -16,7 +16,11 @@ function App() {
       {/* ******************** */}
 
       <div
-        style={{ backgroundColor: "Red", height: "500px", marginTop: "200px" }}
+        style={{
+          backgroundColor: "cyan",
+          height: "1200px",
+          marginTop: "200px",
+        }}
       >
         Test Div
       </div>

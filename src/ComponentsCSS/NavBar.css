@@ -9,7 +9,7 @@
   position: fixed;
   top: 0;
   background-color: white;
-  z-index: 1000;
+  z-index: 500;
   font-size: 16px;
   font-weight: 400;
   letter-spacing: 0.5px;
@@ -212,7 +212,7 @@
 /* Common Css For Drop Down Menus */
 .dropdownMenus {
   position: "absolute";
-  z-index: 1100;
+  z-index: 500;
   border: 1px solid rgb(240, 240, 240);
   box-sizing: border-box;
   background: rgb(255, 255, 255);
@@ -229,11 +229,11 @@
 
 /* Nav Search PopUp Dropdown */
 .searchPopup {
-  width: 419px;
+  width: 414px;
   overflow-x: hidden;
   max-height: "400px";
   padding: 20px 15px;
-  margin-left: 2px;
+  margin-left: 0px;
 }
 .searchPopup h1 {
   color: rgb(51, 51, 51);
@@ -281,10 +281,11 @@
 .downloadCont {
   position: absolute;
   top: 59%;
-  right: 440px;
+  /* right: 435px; */
   width: 212px;
   margin: auto;
   padding: 25px 20px;
+  margin-left: -35px;
 }
 .downloadCont h1 {
   color: black;
@@ -304,13 +305,13 @@
 
 /* Login Profile PopUp */
 #ProfileCont {
-  right: 65px;
   width: 252px;
   display: flex;
   flex-direction: column;
   -webkit-box-pack: start;
   justify-content: flex-start;
   align-items: flex-start;
+  margin-left: -120px;
   animation: 200ms ease-in 0s 1 normal none running fadeIn;
 }
 #ProfileCont h1 {
@@ -409,7 +410,7 @@
 /* Hidden Category PopUp */
 .CateContainer {
   width: 90%;
-  z-index: 1200;
+  z-index: 500;
   margin: auto;
   position: absolute;
   top: 100%;

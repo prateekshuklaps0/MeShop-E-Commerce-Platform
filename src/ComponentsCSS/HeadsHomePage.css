@@ -1,0 +1,14 @@
+/* 
+  font-family: -apple-system, "Helvetica Neue", sans-serif, "Mier Book";
+  color: rgb(244, 51, 151);
+ */
+
+/*  */
+.HeadContainer {
+  border: 1px solid red;
+  width: 80%;
+  min-height: 800px;
+  z-index: 2000;
+  background-color: red;
+  margin-top: 1000px;
+}
