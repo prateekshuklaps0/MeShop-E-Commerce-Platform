@@ -3,6 +3,11 @@ import { NavLink, Navigate, Link } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
 import onClickOutside from "react-onclickoutside";
 
+// Image Imports
+import GPStoreImg from "../Images/StoreButtons/GPButton.jpg";
+import AppStoreImg from "../Images/StoreButtons/APButton.jpg";
+// ********************
+
 // Empty NavBar Search Content
 const DefaultSearchTitles = [
   "saree",
@@ -67,7 +72,7 @@ function EmptyNavSearchContent() {
 }
 // ********************
 
-// Nav Bar Ctegory Title
+// Nav Bar Category Title
 const navCateTitle = [
   "Women Ethnic",
   "Women Western",
@@ -127,8 +132,94 @@ function NavBar() {
   };
   //   *******************************
 
-  // Nav Bar Search Input
+  // Download App PopUp
+  const navigateToApricot = () => {
+    window.open("https://apricot-prateek.netlify.app/", "_blank");
+  };
+  const navigateToGithub = () => {
+    window.open(
+      "https://github.com/prateekshuklaps0/impolite-support-6582",
+      "_blank"
+    );
+  };
 
+  const [showdownload, setshowdownload] = useState(false);
+  const handleShowdownload = () => {
+    setshowdownload(true);
+  };
+  const handleHidedownload = () => {
+    setshowdownload(false);
+  };
+  const DownloadAppPopUp = () => {
+    return (
+      <div
+        style={showdownload ? { display: "inline" } : { display: "none" }}
+        className="dropdownMenus downloadCont"
+      >
+        <h1>Download From a</h1>
+        <img
+          onClick={navigateToGithub}
+          className="GPStoreImg"
+          src={GPStoreImg}
+          alt="Go To Google Play Store"
+        ></img>
+        <img
+          onClick={navigateToApricot}
+          className="ApStoreImg"
+          src={AppStoreImg}
+          alt="Go To App Store"
+        ></img>
+      </div>
+    );
+  };
+  //   *******************************
+
+  // Login Profile PopUp
+  const [showProfileBox, setProfileBox] = useState(false);
+  const handleShowProfileBox = () => {
+    setProfileBox(true);
+  };
+  const handleHideProfileBox = () => {
+    setProfileBox(false);
+  };
+  function HiddenProfileBox() {
+    return (
+      <div
+        id="ProfileCont"
+        style={showProfileBox ? { display: "inline" } : { display: "none" }}
+        className="dropdownMenus downloadCont ProfileCont"
+      >
+        <h1>Hello User</h1>
+        <p>To access your MeShop account</p>
+        <button>{"Sign Up"}</button>
+        <div className="NavBarMyOrderCont">
+          <svg
+            viewBox="0 0 28 28"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            iconSize="20"
+            class="sc-gswNZR bjZSWs"
+          >
+            <path fill="#fff" d="M0 0h28v28H0z"></path>
+            <g clip-path="url(#orders_svg__a)" fill="#333">
+              <path d="M20.032 10.89c.227 0 .418.19.418.418v10.811c0 .228-.19.418-.418.418H7.89a.422.422 0 0 1-.417-.418V11.308c0-.228.19-.418.418-.418h12.14Zm0-1.473H7.89A1.89 1.89 0 0 0 6 11.308v10.811C6 23.154 6.846 24 7.89 24h12.142a1.89 1.89 0 0 0 1.89-1.89V11.308a1.902 1.902 0 0 0-1.89-1.89Z"></path>
+              <path d="M13.961 5a4.87 4.87 0 0 0-4.873 4.864v2.84h.009c.019.39.333.704.732.704a.736.736 0 0 0 .731-.723V9.864a3.404 3.404 0 0 1 3.401-3.401 3.398 3.398 0 0 1 3.401 3.401v2.812c.01.399.333.722.732.722.389 0 .712-.313.731-.703h.01V9.864A4.875 4.875 0 0 0 13.96 5Z"></path>
+            </g>
+            <defs>
+              <clipPath id="orders_svg__a">
+                <path
+                  fill="#fff"
+                  transform="translate(6 5)"
+                  d="M0 0h15.912v19H0z"
+                ></path>
+              </clipPath>
+            </defs>
+          </svg>
+          <h1>My Orders</h1>
+        </div>
+      </div>
+    );
+  }
   //   *******************************
 
   return (
@@ -213,7 +304,11 @@ function NavBar() {
         {/* Upper Nav Right Elements */}
         <div className="upperNav_right">
           {/* Download App Element */}
-          <div className="navTop_right_conts download_app">
+          <div
+            onMouseEnter={handleShowdownload}
+            onMouseLeave={handleHidedownload}
+            className="navTop_right_conts download_app"
+          >
             <svg
               viewBox="0 0 16 24"
               xmlns="http://www.w3.org/2000/svg"
@@ -229,16 +324,23 @@ function NavBar() {
               ></path>
             </svg>
             <p>Download App</p>
+            {<DownloadAppPopUp />}
           </div>
+
           {/* Become a Supplier Element */}
           <div className="navTop_right_conts supplierCont">
             <p>Become a Supplier</p>
           </div>
-          {/* Login and Cart Container */}
-          <div className="navTop_right_conts profile_cart_cont">
+          {/* Login and Cart Container  */}
+          <div className="navTop_right_conts profile_cart_cont ">
             {/* Login Link Element */}
-            <div className="profileCont">
+            <div
+              onMouseEnter={handleShowProfileBox}
+              onMouseLeave={handleHideProfileBox}
+              className="profileCont"
+            >
               <svg
+                id="profileSVG"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
                 class="sc-gswNZR fEPKVe hover"
@@ -262,6 +364,7 @@ function NavBar() {
                 </defs>
               </svg>
               <p>Profile</p>
+              {<HiddenProfileBox />}
             </div>
 
             {/* Cart Link Element */}
