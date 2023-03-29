@@ -73,27 +73,270 @@ function EmptyNavSearchContent() {
 // ********************
 
 // Nav Bar Category Title
-const navCateTitle = [
-  "Women Ethnic",
-  "Women Western",
-  "Men",
-  "Kids",
-  "Home & Kitchen",
-  "Beauty & Health",
-  "Jewellery & Accessories",
-  "Bags & Footwear",
-  "Electronics",
+
+const cateObj = [
+  {
+    title: "Women Ethnic",
+    headings: [
+      "All Women Ethnic",
+      "Sarees",
+      "Kurtis",
+      "Kurta Sets",
+      "Suits & Dress Material",
+      "Other Ethnic",
+    ],
+    subLinks: [
+      ["View All"],
+      [
+        "All Sarees",
+        "Silk Sarees",
+        "Cotton Silk Sarees",
+        "Cotton Sarees",
+        "Georgette Sarees",
+        "Chiffon Sarees",
+        "Satin Sarees",
+        "Embroidered Sarees",
+      ],
+      [
+        "All Kurtis",
+        "Anarkali Kurtis",
+        "Rayon Kurtis",
+        "Cotton Kurtis",
+        "Embroidered Kurtis",
+      ],
+      ["All Kurta Sets"],
+      [
+        "All Suits & Dress Material",
+        "Cotton Suits",
+        "Embroidered Suits",
+        "Chanderi Suits",
+      ],
+      ["Blouses", "Dupattas", "Lehanga", "Gown", "Ethnic Bottomwear"],
+    ],
+  },
+  {
+    title: "Women Western",
+    headings: ["Topwear", "Bottomwear", "Innerwear", "Sleepwear"],
+    subLinks: [
+      ["Tops", "Dresses", "Sweaters", "Jumpsuits"],
+      ["Jeans", "Jeggings", "Palazzos", "Shorts", "Skirts"],
+      ["Bra", "Briefs"],
+      ["Nightsuits", "Babydolls"],
+    ],
+  },
+  {
+    title: "Men",
+    headings: [
+      "Top Wear",
+      "Bottomwear",
+      "Men Accessories",
+      "Men Footwear",
+      "Ethnic Wear",
+      "Inner & Sleep Wear",
+    ],
+    subLinks: [
+      ["All Top Wear", "Tshirts", "Shirts"],
+      ["Track Pants", "Jeans", "Trousers"],
+      [
+        "All Men Accessories",
+        "Watches",
+        "Belts",
+        "Wallets",
+        "Jewellery",
+        "Sunglasses",
+        "Bags",
+      ],
+      ["Casual Shoes", "Sports Shoes", "Sandals", "Formal Shoes"],
+      ["Men Kurtas", "Ethnic Jackets"],
+      ["All Inner & Sleep Wear", "Vests"],
+    ],
+  },
+  {
+    title: "Kids",
+    headings: [
+      "Boys & Girls 2+ Years",
+      "Infant 0-2 Years",
+      "Toys & Accessories",
+      "Baby Care",
+    ],
+    subLinks: [
+      ["Dresses"],
+      ["Rompers"],
+      ["Soft Toys", "Footwear", "Stationery", "Watches", "Bags & Backpacks"],
+      ["All Baby Care"],
+    ],
+  },
+  {
+    title: "Home & Kitchen",
+    headings: ["Home Furnishing", "Home Decor", "Kitchen & Dining"],
+    subLinks: [
+      [
+        "Bedsheets",
+        "Doormats",
+        "Curtains & Sheers",
+        "Cushions & Cushion Covers",
+        "Mattress Protectors",
+      ],
+      ["All Home Decor", "Stickers", "Clocks", "Showpieces"],
+      ["Kitchen Storage", "Cookware & Bakeware"],
+    ],
+  },
+  {
+    title: "Beauty & Health",
+    headings: ["Make up", "Wellness", "Skincare"],
+    subLinks: [
+      ["Face", "Eyes", "Lips", "Nails"],
+      ["Sanitizers", "Oral Care", "Feminine Hygiene"],
+      ["Deodorants"],
+    ],
+  },
+  {
+    title: "Jewellery & Accessories",
+    headings: ["Jewellery", "Women Accessory"],
+    subLinks: [
+      [
+        "Jewellery Set",
+        "Earrings",
+        "Mangalsutras",
+        "Studs",
+        "Bangles",
+        "Necklaces",
+        "Rings",
+        "Anklets",
+      ],
+      ["Bags", "Watches", "Hair Accessories", "Sunglasses", "Socks"],
+    ],
+  },
+  {
+    title: "Bags & Footwear",
+    headings: ["Women Bags", "Men Bags", "Men Footwear", "Women Footwear"],
+    subLinks: [
+      ["All Women Bags", "Handbags", "Clutches", "Slingbags"],
+      ["All Men Bags", "Men Wallets"],
+      ["Sports Shoes", "Casual Shoes", "Formal Shoes", "Sandals"],
+      ["Flats", "Bellies", "Juttis"],
+    ],
+  },
+  {
+    title: "Electronics",
+    headings: ["Mobile & Accessories", "Appliances"],
+    subLinks: [
+      [
+        "All Mobile & Accessories",
+        "Smartwatches",
+        "Mobile Holders",
+        "Mobile cases and covers",
+      ],
+      ["All Appliances", "Grooming", "Home Appliances"],
+    ],
+  },
 ];
 function NavCateTitle() {
+  const [cateTitle, setcateTitle] = useState("");
+  const [showPopUp, setShowPopUp] = useState(false);
+
+  function handleTitleChange(name) {
+    setcateTitle((prev) => (prev = name));
+    setShowPopUp(true);
+  }
+
+  function handleMouseLeave() {
+    setShowPopUp(false);
+  }
+
   return (
-    <div className="navCateCont">
-      {navCateTitle.map((item, ind) => {
+    <div onMouseLeave={handleMouseLeave} className="navCateCont">
+      {cateObj.map((item, ind) => {
         return (
-          <div className="navCateDivs" key={ind + item[1]}>
-            <p>{item}</p>
+          <div
+            onMouseEnter={(e) => {
+              handleTitleChange(item.title);
+            }}
+            className="navCateDivs"
+            key={ind + item.title[1]}
+          >
+            <p>{item.title}</p>
           </div>
         );
       })}
+      {showPopUp && (
+        <CategoriesPopUp
+          onMouseEnter={handleTitleChange}
+          cateTitle={cateTitle}
+        />
+      )}
+    </div>
+  );
+}
+// ********************
+
+// Child Category Elements
+function ReturnElements({ arr }) {
+  return (
+    <div className="layer4">
+      {arr &&
+        arr.map((item, ind) => (
+          <NavLink
+            className="subcatesLinks"
+            to="/"
+            key={ind + item[0] + item[1]}
+          >
+            {item}
+          </NavLink>
+        ))}
+    </div>
+  );
+}
+
+function ChildCate({ array }) {
+  return (
+    <div className="layer2">
+      {array[0] &&
+        array[0].headings.map((item, ind) => {
+          return (
+            <div
+              style={
+                ind % 2 == 0
+                  ? { backgroundColor: "white" }
+                  : { backgroundColor: "rgb(249, 249, 249)" }
+              }
+              key={ind + item[0] + item[1]}
+              className="layer3"
+            >
+              <h1>{item}</h1>
+              <ReturnElements arr={array[0].subLinks[ind]} />
+            </div>
+          );
+        })}
+    </div>
+  );
+}
+
+// ********************
+
+// Hidden Category PopUp
+function CatchTheArr(name) {
+  let requiredArr = cateObj.filter((item, ind) => {
+    if (item.title == name) {
+      return item.headings;
+    }
+  });
+  return requiredArr;
+}
+
+function CategoriesPopUp({ cateTitle, onMouseEnter }) {
+  const [text, setText] = useState("");
+  const [headingArr, setheadingArr] = useState([]);
+  const [linksArr, setlinksArr] = useState([]);
+
+  useEffect(() => {
+    setText(cateTitle);
+    setheadingArr((prev) => (prev = CatchTheArr(cateTitle)));
+  }, [cateTitle]);
+
+  return (
+    <div className="CateContainer" onMouseEnter={() => onMouseEnter}>
+      {headingArr && <ChildCate array={headingArr} />}
     </div>
   );
 }

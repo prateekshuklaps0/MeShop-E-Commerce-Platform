@@ -377,6 +377,14 @@
   align-items: center;
   cursor: pointer;
 }
+#unToggledTitle {
+  color: black;
+  border-bottom: 3px solid transparent;
+}
+#toggledTitle {
+  color: rgb(244, 51, 151);
+  border-bottom-color: rgb(244, 51, 151);
+}
 .navCateDivs:hover {
   color: rgb(244, 51, 151);
   border-bottom-color: rgb(244, 51, 151);
@@ -387,4 +395,63 @@
   font-weight: 400;
   letter-spacing: 0.5px;
   line-height: 1.5;
+}
+.activeTitle {
+  color: black;
+  border-bottom-color: 3px solid transparent;
+}
+.activeTitle:hover {
+  color: rgb(244, 51, 151);
+  border-bottom-color: rgb(244, 51, 151);
+}
+
+/* Hidden Category PopUp */
+.CateContainer {
+  width: 90%;
+  z-index: 1200;
+  margin: auto;
+  position: absolute;
+  top: 100%;
+  background: rgb(255, 255, 255);
+  border-style: solid;
+  border-color: rgb(215, 215, 224);
+  box-shadow: rgba(0, 0, 0, 0.05) 2px 2px 4px 0px;
+  animation: 200ms ease-in 0s 1 normal none running fadeIn;
+  border-width: 0px 0.5px 0.5px;
+  display: flex;
+}
+.layer2 {
+  display: flex;
+  width: 100%;
+  animation: 200ms ease-in 0s 1 normal none running fadeIn;
+}
+.layer3 {
+  padding: 0px 20px;
+  border-radius: 8px;
+  text-align: left;
+  animation: 200ms ease-in 0s 1 normal none running fadeIn;
+}
+.layer3 h1 {
+  color: rgb(244, 51, 151);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+.layer4 {
+  display: flex;
+  flex-direction: column;
+}
+.subcatesLinks {
+  color: rgb(102, 102, 102);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 12px;
+}
+.subcatesLinks:hover {
+  color: rgb(63, 63, 71);
 }
