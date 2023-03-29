@@ -1,7 +1,73 @@
 import "../ComponentsCSS/NavBar.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, Navigate, Link } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
+import onClickOutside from "react-onclickoutside";
 
+// Empty NavBar Search Content
+const DefaultSearchTitles = [
+  "saree",
+  "smartwatch",
+  "kurti",
+  "tshirt",
+  "watch",
+  "lehenga",
+  "top",
+  "shoes",
+  "jeans",
+  "jewellery",
+];
+function EmptyNavSearchContent() {
+  return (
+    <>
+      <h1>Popular Searches</h1>
+
+      <div className="titleHolderDiv firstDefaultCont">
+        {DefaultSearchTitles.slice(0, 3).map((item, ind) => {
+          return (
+            <NavLink
+              to="/"
+              key={item[0] + ind}
+              className="defaultNavSearchtitles"
+            >
+              {item}
+            </NavLink>
+          );
+        })}
+      </div>
+
+      <div className="titleHolderDiv secondDefaultCont">
+        {DefaultSearchTitles.slice(3, 7).map((item, ind) => {
+          return (
+            <NavLink
+              to="/"
+              key={item[0] + ind}
+              className="defaultNavSearchtitles"
+            >
+              {item}
+            </NavLink>
+          );
+        })}
+      </div>
+
+      <div className="titleHolderDiv threeDefaultCont">
+        {DefaultSearchTitles.slice(7, 10).map((item, ind) => {
+          return (
+            <NavLink
+              to="/"
+              key={item[0] + ind}
+              className="defaultNavSearchtitles"
+            >
+              {item}
+            </NavLink>
+          );
+        })}
+      </div>
+    </>
+  );
+}
+// ********************
+
+// Nav Bar Ctegory Title
 const navCateTitle = [
   "Women Ethnic",
   "Women Western",
@@ -13,7 +79,6 @@ const navCateTitle = [
   "Bags & Footwear",
   "Electronics",
 ];
-
 function NavCateTitle() {
   return (
     <div className="navCateCont">
@@ -27,14 +92,30 @@ function NavCateTitle() {
     </div>
   );
 }
+// ********************
 
 function NavBar() {
   // Nav Bar Search Input
   const navSearchInpRef = useRef(null);
+  const formRef = useRef(null);
   const [navSearchValue, setnavSearchValue] = useState("");
+  const [searchPopUpDiv, setsearchPopUpDiv] = useState(false);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (formRef.current && !formRef.current.contains(event.target)) {
+        setsearchPopUpDiv(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const triggerNavSearchInp = () => {
     navSearchInpRef.current.focus();
+    setsearchPopUpDiv(true);
   };
 
   const handleNavSearch = (event) => {
@@ -46,17 +127,24 @@ function NavBar() {
   };
   //   *******************************
 
+  // Nav Bar Search Input
+
+  //   *******************************
+
   return (
     <nav className="navCont">
       {/* Nav Bar Upper Part */}
       <div className="upperNaV">
         {/* Upper Nav Left Elements */}
         <div className="upperNav_left">
-          <h1 className="meshopLogo">meShop</h1>
+          <h1 onClick={() => <Navigate to="/" />} className="meshopLogo">
+            meShop
+          </h1>
           {/* Search Form */}
           <form
             className="navSearchForm"
             onClick={triggerNavSearchInp}
+            ref={formRef}
             action="#"
             method="get"
           >
@@ -95,10 +183,29 @@ function NavBar() {
               value={navSearchValue}
               onChange={handleNavSearch}
             />
+            {/* Clear Nav Search */}
             {navSearchValue && (
               <button type="button" onClick={clearNavSearchText}>
                 X
               </button>
+            )}
+            {/* Nav Search PopUp Dropdown */}
+            {searchPopUpDiv && (
+              <div
+                style={{
+                  position: "absolute",
+                  top: "48%",
+                  left: "231px",
+                }}
+                className="searchPopup dropdownMenus"
+                onClick={() => setsearchPopUpDiv(true)}
+              >
+                {!navSearchValue ? (
+                  <EmptyNavSearchContent />
+                ) : (
+                  <h1>{navSearchValue}</h1>
+                )}
+              </div>
             )}
           </form>
         </div>
