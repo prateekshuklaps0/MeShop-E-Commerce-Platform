@@ -3,6 +3,11 @@ import { NavLink, Navigate, Link } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
 import onClickOutside from "react-onclickoutside";
 
+// Image Imports
+import GPStoreImg from "../Images/StoreButtons/GPButton.jpg";
+import AppStoreImg from "../Images/StoreButtons/APButton.jpg";
+// ********************
+
 // Empty NavBar Search Content
 const DefaultSearchTitles = [
   "saree",
@@ -67,28 +72,271 @@ function EmptyNavSearchContent() {
 }
 // ********************
 
-// Nav Bar Ctegory Title
-const navCateTitle = [
-  "Women Ethnic",
-  "Women Western",
-  "Men",
-  "Kids",
-  "Home & Kitchen",
-  "Beauty & Health",
-  "Jewellery & Accessories",
-  "Bags & Footwear",
-  "Electronics",
+// Nav Bar Category Title
+
+const cateObj = [
+  {
+    title: "Women Ethnic",
+    headings: [
+      "All Women Ethnic",
+      "Sarees",
+      "Kurtis",
+      "Kurta Sets",
+      "Suits & Dress Material",
+      "Other Ethnic",
+    ],
+    subLinks: [
+      ["View All"],
+      [
+        "All Sarees",
+        "Silk Sarees",
+        "Cotton Silk Sarees",
+        "Cotton Sarees",
+        "Georgette Sarees",
+        "Chiffon Sarees",
+        "Satin Sarees",
+        "Embroidered Sarees",
+      ],
+      [
+        "All Kurtis",
+        "Anarkali Kurtis",
+        "Rayon Kurtis",
+        "Cotton Kurtis",
+        "Embroidered Kurtis",
+      ],
+      ["All Kurta Sets"],
+      [
+        "All Suits & Dress Material",
+        "Cotton Suits",
+        "Embroidered Suits",
+        "Chanderi Suits",
+      ],
+      ["Blouses", "Dupattas", "Lehanga", "Gown", "Ethnic Bottomwear"],
+    ],
+  },
+  {
+    title: "Women Western",
+    headings: ["Topwear", "Bottomwear", "Innerwear", "Sleepwear"],
+    subLinks: [
+      ["Tops", "Dresses", "Sweaters", "Jumpsuits"],
+      ["Jeans", "Jeggings", "Palazzos", "Shorts", "Skirts"],
+      ["Bra", "Briefs"],
+      ["Nightsuits", "Babydolls"],
+    ],
+  },
+  {
+    title: "Men",
+    headings: [
+      "Top Wear",
+      "Bottomwear",
+      "Men Accessories",
+      "Men Footwear",
+      "Ethnic Wear",
+      "Inner & Sleep Wear",
+    ],
+    subLinks: [
+      ["All Top Wear", "Tshirts", "Shirts"],
+      ["Track Pants", "Jeans", "Trousers"],
+      [
+        "All Men Accessories",
+        "Watches",
+        "Belts",
+        "Wallets",
+        "Jewellery",
+        "Sunglasses",
+        "Bags",
+      ],
+      ["Casual Shoes", "Sports Shoes", "Sandals", "Formal Shoes"],
+      ["Men Kurtas", "Ethnic Jackets"],
+      ["All Inner & Sleep Wear", "Vests"],
+    ],
+  },
+  {
+    title: "Kids",
+    headings: [
+      "Boys & Girls 2+ Years",
+      "Infant 0-2 Years",
+      "Toys & Accessories",
+      "Baby Care",
+    ],
+    subLinks: [
+      ["Dresses"],
+      ["Rompers"],
+      ["Soft Toys", "Footwear", "Stationery", "Watches", "Bags & Backpacks"],
+      ["All Baby Care"],
+    ],
+  },
+  {
+    title: "Home & Kitchen",
+    headings: ["Home Furnishing", "Home Decor", "Kitchen & Dining"],
+    subLinks: [
+      [
+        "Bedsheets",
+        "Doormats",
+        "Curtains & Sheers",
+        "Cushions & Cushion Covers",
+        "Mattress Protectors",
+      ],
+      ["All Home Decor", "Stickers", "Clocks", "Showpieces"],
+      ["Kitchen Storage", "Cookware & Bakeware"],
+    ],
+  },
+  {
+    title: "Beauty & Health",
+    headings: ["Make up", "Wellness", "Skincare"],
+    subLinks: [
+      ["Face", "Eyes", "Lips", "Nails"],
+      ["Sanitizers", "Oral Care", "Feminine Hygiene"],
+      ["Deodorants"],
+    ],
+  },
+  {
+    title: "Jewellery & Accessories",
+    headings: ["Jewellery", "Women Accessory"],
+    subLinks: [
+      [
+        "Jewellery Set",
+        "Earrings",
+        "Mangalsutras",
+        "Studs",
+        "Bangles",
+        "Necklaces",
+        "Rings",
+        "Anklets",
+      ],
+      ["Bags", "Watches", "Hair Accessories", "Sunglasses", "Socks"],
+    ],
+  },
+  {
+    title: "Bags & Footwear",
+    headings: ["Women Bags", "Men Bags", "Men Footwear", "Women Footwear"],
+    subLinks: [
+      ["All Women Bags", "Handbags", "Clutches", "Slingbags"],
+      ["All Men Bags", "Men Wallets"],
+      ["Sports Shoes", "Casual Shoes", "Formal Shoes", "Sandals"],
+      ["Flats", "Bellies", "Juttis"],
+    ],
+  },
+  {
+    title: "Electronics",
+    headings: ["Mobile & Accessories", "Appliances"],
+    subLinks: [
+      [
+        "All Mobile & Accessories",
+        "Smartwatches",
+        "Mobile Holders",
+        "Mobile cases and covers",
+      ],
+      ["All Appliances", "Grooming", "Home Appliances"],
+    ],
+  },
 ];
 function NavCateTitle() {
+  const [cateTitle, setcateTitle] = useState("");
+  const [showPopUp, setShowPopUp] = useState(false);
+
+  function handleTitleChange(name) {
+    setcateTitle((prev) => (prev = name));
+    setShowPopUp(true);
+  }
+
+  function handleMouseLeave() {
+    setShowPopUp(false);
+  }
+
   return (
-    <div className="navCateCont">
-      {navCateTitle.map((item, ind) => {
+    <div onMouseLeave={handleMouseLeave} className="navCateCont">
+      {cateObj.map((item, ind) => {
         return (
-          <div className="navCateDivs" key={ind + item[1]}>
-            <p>{item}</p>
+          <div
+            onMouseEnter={(e) => {
+              handleTitleChange(item.title);
+            }}
+            className="navCateDivs"
+            key={ind + item.title[1]}
+          >
+            <p>{item.title}</p>
           </div>
         );
       })}
+      {showPopUp && (
+        <CategoriesPopUp
+          onMouseEnter={handleTitleChange}
+          cateTitle={cateTitle}
+        />
+      )}
+    </div>
+  );
+}
+// ********************
+
+// Child Category Elements
+function ReturnElements({ arr }) {
+  return (
+    <div className="layer4">
+      {arr &&
+        arr.map((item, ind) => (
+          <NavLink
+            className="subcatesLinks"
+            to="/"
+            key={ind + item[0] + item[1]}
+          >
+            {item}
+          </NavLink>
+        ))}
+    </div>
+  );
+}
+
+function ChildCate({ array }) {
+  return (
+    <div className="layer2">
+      {array[0] &&
+        array[0].headings.map((item, ind) => {
+          return (
+            <div
+              style={
+                ind % 2 == 0
+                  ? { backgroundColor: "white" }
+                  : { backgroundColor: "rgb(249, 249, 249)" }
+              }
+              key={ind + item[0] + item[1]}
+              className="layer3"
+            >
+              <h1>{item}</h1>
+              <ReturnElements arr={array[0].subLinks[ind]} />
+            </div>
+          );
+        })}
+    </div>
+  );
+}
+
+// ********************
+
+// Hidden Category PopUp
+function CatchTheArr(name) {
+  let requiredArr = cateObj.filter((item, ind) => {
+    if (item.title == name) {
+      return item.headings;
+    }
+  });
+  return requiredArr;
+}
+
+function CategoriesPopUp({ cateTitle, onMouseEnter }) {
+  const [text, setText] = useState("");
+  const [headingArr, setheadingArr] = useState([]);
+  const [linksArr, setlinksArr] = useState([]);
+
+  useEffect(() => {
+    setText(cateTitle);
+    setheadingArr((prev) => (prev = CatchTheArr(cateTitle)));
+  }, [cateTitle]);
+
+  return (
+    <div className="CateContainer" onMouseEnter={() => onMouseEnter}>
+      {headingArr && <ChildCate array={headingArr} />}
     </div>
   );
 }
@@ -127,8 +375,94 @@ function NavBar() {
   };
   //   *******************************
 
-  // Nav Bar Search Input
+  // Download App PopUp
+  const navigateToApricot = () => {
+    window.open("https://apricot-prateek.netlify.app/", "_blank");
+  };
+  const navigateToGithub = () => {
+    window.open(
+      "https://github.com/prateekshuklaps0/impolite-support-6582",
+      "_blank"
+    );
+  };
 
+  const [showdownload, setshowdownload] = useState(false);
+  const handleShowdownload = () => {
+    setshowdownload(true);
+  };
+  const handleHidedownload = () => {
+    setshowdownload(false);
+  };
+  const DownloadAppPopUp = () => {
+    return (
+      <div
+        style={showdownload ? { display: "inline" } : { display: "none" }}
+        className="dropdownMenus downloadCont"
+      >
+        <h1>Download From a</h1>
+        <img
+          onClick={navigateToGithub}
+          className="GPStoreImg"
+          src={GPStoreImg}
+          alt="Go To Google Play Store"
+        ></img>
+        <img
+          onClick={navigateToApricot}
+          className="ApStoreImg"
+          src={AppStoreImg}
+          alt="Go To App Store"
+        ></img>
+      </div>
+    );
+  };
+  //   *******************************
+
+  // Login Profile PopUp
+  const [showProfileBox, setProfileBox] = useState(false);
+  const handleShowProfileBox = () => {
+    setProfileBox(true);
+  };
+  const handleHideProfileBox = () => {
+    setProfileBox(false);
+  };
+  function HiddenProfileBox() {
+    return (
+      <div
+        id="ProfileCont"
+        style={showProfileBox ? { display: "inline" } : { display: "none" }}
+        className="dropdownMenus downloadCont ProfileCont"
+      >
+        <h1>Hello User</h1>
+        <p>To access your MeShop account</p>
+        <button>{"Sign Up"}</button>
+        <div className="NavBarMyOrderCont">
+          <svg
+            viewBox="0 0 28 28"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            iconSize="20"
+            class="sc-gswNZR bjZSWs"
+          >
+            <path fill="#fff" d="M0 0h28v28H0z"></path>
+            <g clip-path="url(#orders_svg__a)" fill="#333">
+              <path d="M20.032 10.89c.227 0 .418.19.418.418v10.811c0 .228-.19.418-.418.418H7.89a.422.422 0 0 1-.417-.418V11.308c0-.228.19-.418.418-.418h12.14Zm0-1.473H7.89A1.89 1.89 0 0 0 6 11.308v10.811C6 23.154 6.846 24 7.89 24h12.142a1.89 1.89 0 0 0 1.89-1.89V11.308a1.902 1.902 0 0 0-1.89-1.89Z"></path>
+              <path d="M13.961 5a4.87 4.87 0 0 0-4.873 4.864v2.84h.009c.019.39.333.704.732.704a.736.736 0 0 0 .731-.723V9.864a3.404 3.404 0 0 1 3.401-3.401 3.398 3.398 0 0 1 3.401 3.401v2.812c.01.399.333.722.732.722.389 0 .712-.313.731-.703h.01V9.864A4.875 4.875 0 0 0 13.96 5Z"></path>
+            </g>
+            <defs>
+              <clipPath id="orders_svg__a">
+                <path
+                  fill="#fff"
+                  transform="translate(6 5)"
+                  d="M0 0h15.912v19H0z"
+                ></path>
+              </clipPath>
+            </defs>
+          </svg>
+          <h1>My Orders</h1>
+        </div>
+      </div>
+    );
+  }
   //   *******************************
 
   return (
@@ -213,7 +547,11 @@ function NavBar() {
         {/* Upper Nav Right Elements */}
         <div className="upperNav_right">
           {/* Download App Element */}
-          <div className="navTop_right_conts download_app">
+          <div
+            onMouseEnter={handleShowdownload}
+            onMouseLeave={handleHidedownload}
+            className="navTop_right_conts download_app"
+          >
             <svg
               viewBox="0 0 16 24"
               xmlns="http://www.w3.org/2000/svg"
@@ -229,16 +567,23 @@ function NavBar() {
               ></path>
             </svg>
             <p>Download App</p>
+            {<DownloadAppPopUp />}
           </div>
+
           {/* Become a Supplier Element */}
           <div className="navTop_right_conts supplierCont">
             <p>Become a Supplier</p>
           </div>
-          {/* Login and Cart Container */}
-          <div className="navTop_right_conts profile_cart_cont">
+          {/* Login and Cart Container  */}
+          <div className="navTop_right_conts profile_cart_cont ">
             {/* Login Link Element */}
-            <div className="profileCont">
+            <div
+              onMouseEnter={handleShowProfileBox}
+              onMouseLeave={handleHideProfileBox}
+              className="profileCont"
+            >
               <svg
+                id="profileSVG"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
                 class="sc-gswNZR fEPKVe hover"
@@ -262,6 +607,7 @@ function NavBar() {
                 </defs>
               </svg>
               <p>Profile</p>
+              {<HiddenProfileBox />}
             </div>
 
             {/* Cart Link Element */}
