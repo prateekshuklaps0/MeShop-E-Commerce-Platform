@@ -83,7 +83,7 @@ function HiddenFooter({ array }) {
 
 // Main Footer Function
 function Footer() {
-  const [showMoreFooter, setshowMoreFooter] = useState(false);
+  const [showMoreFooter, setshowMoreFooter] = useState(true);
 
   const handleMoreFooterClick = () => {
     setshowMoreFooter((prev) => !prev);

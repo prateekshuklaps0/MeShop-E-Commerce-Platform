@@ -1,0 +1,40 @@
+.ContProducts {
+  padding: 0 70px;
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: 50px;
+}
+.ContProducts h1 {
+  color: rgb(51, 51, 51);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  text-align: left;
+  line-height: 40px;
+  margin: 0px;
+  padding: 0px 0px 28px;
+}
+
+.CateAndProductCont {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Sort And Filter Div */
+
+.SortFilterCont {
+  height: 300px;
+  width: 25.5%;
+}
+
+/* Products Box Div */
+
+.ProductsBox {
+  border: 1px solid red;
+  width: 72.5%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
