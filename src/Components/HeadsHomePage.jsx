@@ -17,6 +17,10 @@ import ThirdHeadImg3 from "../Images/LandingPageHeader/thirdHeadImg3.webp";
 import FourthHeadImg1 from "../Images/LandingPageHeader/fourthHeadImg1.webp";
 import FourthHeadImg2 from "../Images/LandingPageHeader/fourthHeadImg2.webp";
 import FourthHeadImg3 from "../Images/LandingPageHeader/fourthHeadImg3.webp";
+// Fifth Head Images
+import FifthHeadIMG from "../Images/LandingPageHeader/FifthHeadIMG.webp";
+import GPStoreImg from "../Images/StoreButtons/GPButton.jpg";
+import AppStoreImg from "../Images/StoreButtons/APButton.jpg";
 
 // ********************
 
@@ -64,7 +68,7 @@ function FirstHeader() {
             src="https://images.meesho.com/images/pow/playstoreSmallIcon.webp"
             alt="Download the Meesho App"
           ></img>
-          <h3>Download the Meesho App</h3>
+          <h3>Download the MeShop App</h3>
         </div>
       </div>
       <div className="firstHeadRightCont">
@@ -107,24 +111,166 @@ function SecondHeader() {
 // ********************
 
 const thirdHeadElements = {
+  id: 3,
   text: "Essentials",
   cards: [
-    { img: "ThirdHeadImg1", buttonText: "Home Decor" },
-    { img: "ThirdHeadImg2", buttonText: "Kitchen Appliances" },
-    { img: "ThirdHeadImg3", buttonText: "Health Care" },
+    { img: ThirdHeadImg1, buttonText: "Home Decor" },
+    { img: ThirdHeadImg2, buttonText: "Kitchen Appliances" },
+    { img: ThirdHeadImg3, buttonText: "Health Care" },
   ],
 };
 const fourthHeadElements = {
+  id: 4,
   text: "New styles",
   cards: [
-    { img: "FourthHeadImg1", buttonText: "Accessories" },
-    { img: "FourthHeadImg2", buttonText: "Footwear" },
-    { img: "FourthHeadImg3", buttonText: "Electronics" },
+    { img: FourthHeadImg1, buttonText: "Accessories" },
+    { img: FourthHeadImg2, buttonText: "Footwear" },
+    { img: FourthHeadImg3, buttonText: "Electronics" },
   ],
 };
 // Third and Fourth Header Header
 function ThirdAndFourthHead(props) {
-  return <div className="CombinedHeadCont"></div>;
+  const { id, text, cards } = props.obj;
+  return (
+    <div
+      style={
+        id == 4
+          ? {
+              background: "rgb(255,255,255)",
+              background:
+                "linear-gradient(0deg, rgba(255,255,255,1) -60%, rgba(244,224,186,1) -40%, rgba(251,195,74,1) 77%)",
+            }
+          : {
+              background: "rgb(255,255,255)",
+              background:
+                "linear-gradient(0deg, rgba(255,255,255,1) -60%, rgba(244,224,186,1) -40%, rgba(251,195,74,1) 54%)",
+            }
+      }
+      className="CombinedHeadCont"
+    >
+      <div className="combinedLeftdiv">
+        <h1>{text}</h1>
+        <button>View All</button>
+      </div>
+      <div className="combinedRightdiv">
+        {cards.map((item, ind) => (
+          <div className="combinedCardsDiv" key={ind + text}>
+            <img src={item.img} alt={item.buttonText} />
+            <button
+              style={
+                item.buttonText == "Kitchen Appliances"
+                  ? { padding: "7px 0px", width: "187px" }
+                  : item.buttonText == "Accessories"
+                  ? { padding: "7px 5px", width: "145px" }
+                  : { padding: "7px 15px", width: "145px" }
+              }
+            >
+              {item.buttonText}
+            </button>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+// ********************
+
+// Fifth Header
+function FifthHead() {
+  return (
+    <div
+      className="fiftheadCont"
+      style={{
+        backgroundImage: `url(${require("../Images/LandingPageHeader/FifthHeadIMG.webp")})`,
+        backgroundSize: "cover",
+      }}
+    >
+      <h3>Become a Reseller and</h3>
+      <h1>Start your Online Business</h1>
+      <h1>with Zero Investment</h1>
+      <div>
+        <img src={AppStoreImg} alt="" />
+        <img src={GPStoreImg} alt="" />
+      </div>
+    </div>
+  );
+}
+// ********************
+
+// Sixth Header
+function SixthHead() {
+  return (
+    <div
+      style={{
+        backgroundImage: `url(${require("../Images/LandingPageHeader/SixthHeadIMG.webp")})`,
+        backgroundSize: "cover",
+      }}
+      className="sixtheadCont"
+    >
+      <h1>Register as a MeShop Supplier</h1>
+      <p>Sell your products to crores of customers at 0% commission</p>
+      <div className="subOptionsCont">
+        <div className="subOptionCardDiv">
+          <svg
+            width="20"
+            height="21"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            iconsize="20"
+            class="sc-bcXHqe cCbgOs"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M0 10.5C0 4.98 4.48.5 10 .5s10 4.48 10 10-4.48 10-10 10-10-4.48-10-10Zm7.283 4.293c.39.39 1.02.39 1.41 0l7.58-7.59a.996.996 0 1 0-1.41-1.41l-6.88 6.88-2.88-2.88a.996.996 0 1 0-1.41 1.41l3.59 3.59Z"
+              fill="#06A759"
+            ></path>
+          </svg>
+          <h3>Grow your business 10x</h3>
+        </div>
+        <div className="subOptionCardDiv MiddleSupplier">
+          <svg
+            width="20"
+            height="21"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            iconsize="20"
+            class="sc-bcXHqe cCbgOs"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M0 10.5C0 4.98 4.48.5 10 .5s10 4.48 10 10-4.48 10-10 10-10-4.48-10-10Zm7.283 4.293c.39.39 1.02.39 1.41 0l7.58-7.59a.996.996 0 1 0-1.41-1.41l-6.88 6.88-2.88-2.88a.996.996 0 1 0-1.41 1.41l3.59 3.59Z"
+              fill="#06A759"
+            ></path>
+          </svg>
+          <h3>Enjoy 100% Profit</h3>
+        </div>
+        <div className="subOptionCardDiv">
+          <svg
+            width="20"
+            height="21"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            iconsize="20"
+            class="sc-bcXHqe cCbgOs"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M0 10.5C0 4.98 4.48.5 10 .5s10 4.48 10 10-4.48 10-10 10-10-4.48-10-10Zm7.283 4.293c.39.39 1.02.39 1.41 0l7.58-7.59a.996.996 0 1 0-1.41-1.41l-6.88 6.88-2.88-2.88a.996.996 0 1 0-1.41 1.41l3.59 3.59Z"
+              fill="#06A759"
+            ></path>
+          </svg>
+          <h3>Sell all over India</h3>
+        </div>
+      </div>
+      <button>
+        <h2>Sign up</h2>
+        <h2>now</h2>
+      </button>
+    </div>
+  );
 }
 // ********************
 
@@ -137,6 +283,8 @@ function HeadsHomePage() {
       <SecondHeader />
       <ThirdAndFourthHead obj={thirdHeadElements} />
       <ThirdAndFourthHead obj={fourthHeadElements} />
+      <FifthHead />
+      <SixthHead />
     </div>
   );
 }

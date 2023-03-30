@@ -1,0 +1,72 @@
+.FooterOuterCont {
+  width: 100%;
+  margin: auto;
+  width: 100%;
+  background-color: rgb(249, 249, 249);
+  font-family: -apple-system, "Helvetica Neue", sans-serif, "Mier Book";
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
+  padding: 0px 0px 60px;
+}
+
+.InnerFooterCont {
+  border: 1px solid rgb(223, 223, 223);
+  padding: 18px 24px;
+  border-radius: 8px;
+  width: 91%;
+  margin: auto;
+  background: rgb(255, 255, 255);
+  color: rgb(51, 51, 51);
+}
+
+/* More About MeShop Div */
+
+.MoreAboutMeShopDiv {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.MoreAboutMeShopDiv h1 {
+  color: rgb(51, 51, 51);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: -0px;
+  word-spacing: 2px;
+}
+.MoreAboutMeShopDiv svg {
+  height: 28px;
+  width: 28px;
+  transition: transform 0.3s ease;
+}
+
+/* Hidden Footer  */
+.HiddenFooterCont {
+  width: 100%;
+  margin: auto;
+  border-top: 1px solid rgb(223, 223, 223);
+  overflow: hidden;
+  transition: all 0.3s ease-out 0s;
+  margin-top: 15px;
+  padding-top: 24px;
+}
+.HiddenFooterCards {
+  text-align: left;
+  margin-bottom: 30px;
+}
+.HiddenFooterCards h1 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.HiddenFooterCards p {
+  color: rgb(102, 102, 102);
+  font-size: 14px;
+  font-weight: 400;
+}
