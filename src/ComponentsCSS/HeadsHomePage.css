@@ -1,14 +1,184 @@
 /* 
   font-family: -apple-system, "Helvetica Neue", sans-serif, "Mier Book";
   color: rgb(244, 51, 151);
+  font-family: -apple-system, "Helvetica Neue", sans-serif, "Mier Book";
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+    pInk color - color: rgb(244, 51, 151);
  */
 
 /*  */
 .HeadContainer {
-  border: 1px solid red;
-  width: 80%;
-  min-height: 800px;
-  z-index: 2000;
-  background-color: red;
-  margin-top: 1000px;
+  margin: auto;
+  margin-top: 165px;
+  max-width: 76%;
+  font-family: -apple-system, "Helvetica Neue", sans-serif, "Mier Book";
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
+  box-sizing: border-box;
+  background-color: white;
 }
+
+/* First Container */
+
+.firstCont {
+  width: 100%;
+  display: flex;
+  min-height: 336px;
+  width: 100%;
+  border-radius: 8px;
+}
+.firstHeadLeftCont {
+  width: 611px;
+  background-color: rgb(249, 249, 249);
+  text-align: left;
+  padding-left: 50px;
+}
+.firstHeadLeftCont h1 {
+  color: rgb(51, 51, 51);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 52px;
+  word-spacing: -3px;
+  letter-spacing: -1px;
+}
+.firstHeadLeftCont h1:nth-child(1) {
+  margin-top: 40px;
+}
+.headPayModeCont {
+  display: flex;
+  width: 90%;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 10px 15px;
+}
+.COD {
+  border-left: 1px solid rgb(33, 33, 33);
+  padding-left: 10px;
+  margin-right: 5px;
+}
+.actualModeDivs {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  width: 30%;
+}
+.actualModeDivs img {
+  background: rgb(247, 168, 202);
+  width: 32px;
+  height: 32px;
+  border-style: none;
+  border-radius: 50%;
+}
+.actualModeDivs div {
+  margin-left: 8px;
+}
+.actualModeDivs p {
+  color: rgb(51, 51, 51);
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 20px;
+}
+.firstHeadDownloadBTN {
+  display: flex;
+  align-items: center;
+  color: white;
+  background-color: rgb(244, 51, 151);
+  border-radius: 4px;
+  padding: 10px 28px;
+  justify-content: space-between;
+  width: 57%;
+  overflow: hidden;
+  margin-top: 30px;
+  cursor: pointer;
+}
+.firstHeadDownloadBTN h3 {
+  color: rgb(255, 255, 255);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+/* Top Categories to choose from */
+.TopCategoriesHeadCont {
+  width: 100%;
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+  color: rgb(51, 51, 51);
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 44px;
+  text-align: center;
+  margin-top: 60px;
+}
+.TopCategoriesHeadCont div {
+  width: 22%;
+  height: 1px;
+  background: rgb(247, 168, 202);
+}
+
+/* Second Header */
+
+.SecondCont {
+  display: flex;
+  padding: 25px;
+  padding-top: 100px;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    165deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 204, 87, 1) 15%,
+    rgba(255, 204, 87, 1) 100%
+  );
+  justify-content: space-between;
+  align-items: end;
+  margin-top: 50px;
+}
+.SecondLeftDiv {
+}
+.SecondLeftDiv > img {
+}
+.SecondRightDiv {
+  width: 60.5%;
+  margin-bottom: 10px;
+}
+.SecondRightDiv h1 {
+  color: rgb(134, 13, 185);
+  font-size: 50px;
+  font-weight: 600;
+  text-shadow: -1px 1px 0 white, 1px -1px 0 white, -1px 1px 0 white,
+    1px 1px 0 white;
+  text-shadow: -1px 1px 10px white, 1px -1px 10px white, -1px 1px 10px white,
+    1px 1px 10px white;
+  font-family: -apple-system, "Helvetica Neue", sans-serif, "Mier Book";
+  padding-bottom: 60px;
+}
+.SecondRightIMGCont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    165deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 204, 87, 1) 15%,
+    rgba(255, 204, 87, 1) 100%
+  );
+}
+.SecondRightIMGCont img {
+}
+
+/* Third and Fourth Header Header */
