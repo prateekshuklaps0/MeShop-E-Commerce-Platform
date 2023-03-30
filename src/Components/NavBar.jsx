@@ -341,22 +341,6 @@ function CategoriesPopUp({ cateTitle, onMouseEnter }) {
 }
 // ********************
 
-const options = {
-  method: "GET",
-  headers: {
-    "X-RapidAPI-Key": "SIGN-UP-FOR-KEY",
-    "X-RapidAPI-Host": "real-time-product-search.p.rapidapi.com",
-  },
-};
-
-fetch(
-  "https://real-time-product-search.p.rapidapi.com/search?q=Nike%20shoes&country=us&language=en",
-  options
-)
-  .then((response) => response.json())
-  .then((response) => console.log(response))
-  .catch((err) => console.error(err));
-
 function NavBar() {
   // Nav Bar Search Input
   const navSearchInpRef = useRef(null);
