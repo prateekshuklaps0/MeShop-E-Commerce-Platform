@@ -25,8 +25,92 @@
 /* Sort And Filter Div */
 
 .SortFilterCont {
-  height: 300px;
   width: 25.5%;
+}
+.sortAndFilterArrow {
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.sortCont {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(255, 255, 255);
+  border-radius: 8px;
+  list-style-type: none;
+  padding: 8px 24px;
+  overflow: hidden;
+  border: 1px solid rgb(240, 240, 240);
+  border-radius: 4px;
+  cursor: pointer;
+  min-width: 59px;
+  margin-top: 2px;
+  gap: 2px;
+}
+.sortTextHolder {
+  display: flex;
+  align-items: center;
+}
+.SortBy {
+  color: rgb(153, 153, 153);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+}
+.sortedValueText {
+  color: rgb(51, 51, 51);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  margin-left: 5px;
+}
+.sortDD {
+  z-index: 300;
+  position: absolute;
+  cursor: pointer;
+  background-color: rgb(249, 249, 249);
+  border-radius: 0px 0px 8px 8px;
+  border: 1px solid rgb(240, 240, 240);
+  width: 336px;
+  height: 288px;
+  overflow-y: scroll;
+  filter: drop-shadow(rgba(34, 34, 34, 0.12) 0px 2px 4px)
+    drop-shadow(rgba(34, 34, 34, 0.12) 0px 0px 1px);
+}
+.sortInActive {
+  text-align: left;
+  border-radius: 0px 0px 8px 8px;
+  padding: 16px 24px 16px 16px;
+  font-size: 15px;
+  cursor: pointer;
+  color: rgb(102, 102, 102);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  background-color: rgb(249, 249, 249);
+}
+.sortActive {
+  text-align: left;
+  border-radius: 0px 0px 8px 8px;
+  padding: 16px 24px 16px 16px;
+  font-size: 15px;
+  cursor: pointer;
+  color: rgb(102, 102, 102);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  background-color: #fcd0e7;
+}
+.sortActive:hover {
+  background-color: rgb(249, 249, 249);
 }
 
 /* Products Box Div */
@@ -42,4 +126,93 @@
   border-radius: 8px;
   background-color: rgb(255, 255, 255);
   border: 1px solid rgb(240, 240, 240);
+  overflow: hidden;
+  object-fit: contain;
+  text-size-adjust: 100%;
+}
+.OneProductCardCont img {
+  border-style: none;
+  height: 232px;
+  margin: auto;
+}
+.productCardTextsHolder {
+  margin: auto;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  border-radius: 8px;
+  padding: 12px;
+  text-align: left;
+}
+.productCardTextsHolder h1 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: rgb(153, 153, 153);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: -16px;
+}
+.productCardTextsHolder p {
+  color: rgb(51, 51, 51);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+}
+.productCardTextsHolder p span {
+  color: rgb(153, 153, 153);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+}
+.productCardTextsHolder h3 {
+  color: rgb(102, 102, 102);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  background: rgb(249, 249, 249);
+  padding: 4px 8px;
+  border-radius: 48px;
+  display: inline-block;
+  margin-top: 12px;
+}
+.ratingAndReviewCont {
+  display: flex;
+  align-items: center;
+  margin-top: 12px;
+}
+.ratingDiv {
+  display: flex;
+  align-items: center;
+  background: rgb(35, 187, 117);
+  color: rgb(255, 255, 255);
+  padding: 4px 8px;
+  border-radius: 16px;
+}
+.ratingDiv:hover {
+  background: rgb(19, 202, 116);
+}
+.productCardTextsHolder div h4 {
+  display: inline-block;
+}
+.ratingDiv svg {
+  margin-left: 4px;
+  height: 10px;
+  width: 10px;
+}
+.ratingDiv svg path {
+  fill: rgb(255, 255, 255);
+}
+.productCardTextsHolder div h5 {
+  color: rgb(153, 153, 153);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  margin-left: 4px;
+  letter-spacing: 1px;
 }
