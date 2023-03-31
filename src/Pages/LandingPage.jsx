@@ -1,6 +1,6 @@
 import NavBar from "../Components/NavBar";
 import HeadsHomePage from "../Components/HeadsHomePage";
-import HomePageProduct from "../Components/HomePageProduct";
+import { HomePageProduct, GenerateCards } from "../Components/HomePageProduct";
 import Faq from "../Components/Faq";
 import Footer from "../Components/Footer";
 

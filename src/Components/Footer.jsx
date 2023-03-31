@@ -66,7 +66,6 @@ const HiddenFooterContent = [
 ];
 // Hidden Footer
 function HiddenFooter({ array }) {
-  console.log(array);
   return (
     <div className="HiddenFooterCont">
       {array.map((item, ind) => (

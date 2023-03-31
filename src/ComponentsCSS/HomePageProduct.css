@@ -32,9 +32,14 @@
 /* Products Box Div */
 
 .ProductsBox {
-  border: 1px solid red;
   width: 72.5%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 20px;
+}
+.OneProductCardCont {
+  cursor: pointer;
+  border-radius: 8px;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(240, 240, 240);
 }
