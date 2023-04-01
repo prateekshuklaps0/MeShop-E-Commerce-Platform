@@ -121,6 +121,212 @@
 /* Right Side Div */
 
 .PPrightDiv {
-  border: 1px solid blue;
   width: 53.5%;
+}
+.ProductNameCont {
+  background-color: rgb(255, 255, 255);
+  border-radius: 8px;
+  margin-bottom: 16px;
+  padding: 20px 16px;
+  border: 1px solid rgb(240, 240, 240);
+  text-align: left;
+}
+.ProductNameCont h1:nth-child(1) {
+  color: rgb(153, 153, 153);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+}
+.ProductNameCont h1:nth-child(2) {
+  color: rgb(51, 51, 51);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 40px;
+  margin-top: 8px;
+  display: flex;
+  align-items: top;
+}
+.TopratingText {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  margin-left: 3px;
+}
+.SPratingsReview {
+  margin-left: 8px;
+  cursor: pointer;
+  color: rgb(153, 153, 153);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+}
+.FreeDelivery {
+  background-color: rgb(255, 255, 255);
+  pointer-events: none;
+  color: rgb(102, 102, 102);
+  background: rgb(249, 249, 249);
+  padding: 4px 8px;
+  border-radius: 48px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.MoreDetDiv {
+  text-align: left;
+  background-color: rgb(255, 255, 255);
+  border-radius: 8px;
+  margin-bottom: 16px;
+  padding: 20px 16px;
+  border: 1px solid rgb(240, 240, 240);
+}
+.commonHeading {
+  color: rgb(51, 51, 51);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+  margin-bottom: 20px;
+}
+.MoreDetDiv p {
+  color: rgb(102, 102, 102);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+}
+.moreInfoLink {
+  border-bottom: 0.8px dashed rgb(102, 102, 102);
+  margin: 8px 0px 16px;
+  display: block;
+  width: fit-content;
+  cursor: pointer;
+  color: rgb(102, 102, 102);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.SoldByDiv {
+  text-align: left;
+  background-color: rgb(255, 255, 255);
+  border-radius: 8px;
+  margin-bottom: 16px;
+  padding: 17px 18px 21px 16px;
+  border: 1px solid rgb(240, 240, 240);
+}
+.SoldByChildDiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.SellerNameDiv {
+  display: flex;
+  align-items: center;
+}
+.SellerIconDiv {
+  height: 72px;
+  width: 72px;
+  left: 36px;
+  border-radius: 50%;
+  background: url(https://images.meesho.com/images/pow/shop_profile.png) center
+    center / contain no-repeat;
+  bottom: 4px;
+  border: 0.5px solid rgb(240, 240, 240);
+}
+.SellerNameDiv h1 {
+  color: rgb(51, 51, 51);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: left;
+  margin: 0px;
+  padding: 0px 50px 0px 12px;
+}
+.SoldByChildDivbutton {
+  color: rgb(244, 51, 151);
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 0.0015em;
+  border-radius: 4px;
+  background: rgb(255, 255, 255);
+  padding: 8px 30px;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 160px;
+  border: 1px solid rgb(244, 51, 151);
+}
+.ThirdSoldbyDiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  width: 400px;
+  margin-left: 100px;
+}
+.SoldByThirdChilds {
+  cursor: pointer;
+  background-color: rgb(255, 255, 255);
+  border-radius: 8px;
+  margin-right: 32px;
+  width: 100px;
+}
+.SoldByRating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  padding-top: 4px;
+  padding-bottom: 6px;
+  width: 65px;
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(125, 162, 249);
+  fill: rgb(85, 133, 248);
+  box-shadow: rgb(231, 238, 255) 0px 0px 0px 1px in;
+}
+.SoldByRating p {
+  color: rgb(130, 164, 246);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+}
+.SoldByRating svg {
+  margin-left: 4px;
+  height: 10px;
+  width: 10px;
+  fill: rgb(85, 133, 248);
+}
+.SoldByRating svg path {
+  fill: rgb(85, 133, 248);
+}
+.SoldByNumText {
+  color: rgb(51, 51, 51);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  padding: 2px 0px;
+}
+.SoldByLastText {
+  color: rgb(153, 153, 153);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: left;
+  margin: 0px;
+  padding: 4px 0px 0px;
 }
