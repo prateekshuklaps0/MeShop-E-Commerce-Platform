@@ -3,15 +3,21 @@ import React from "react";
 import { Routes, Route, NavLink } from "react-router-dom";
 
 // Pages
+import ScrollToTop from "./Pages/ScrollToTop";
+import PageNotFound from "./Pages/PageNotFound";
 import Landing from "./Pages/LandingPage";
+import SingleProduct from "./Pages/SingleProductPage";
 // ******************
 
 function App() {
   return (
     <div className="App">
+      <ScrollToTop />
       {/* Routes */}
       <Routes>
-        <Route exact path="/" element={<Landing />} />
+        <Route path="/" element={<Landing />} />
+        <Route path="/product/:productId" element={<SingleProduct />} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
       {/* ******************** */}
 

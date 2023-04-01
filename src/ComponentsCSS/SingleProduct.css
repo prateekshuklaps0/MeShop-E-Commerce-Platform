@@ -1,0 +1,126 @@
+.PPOuterCont {
+  margin-top: 100px;
+  width: 100%;
+}
+
+.PPInnerCont {
+  margin: auto;
+  width: 75%;
+  margin-top: 140px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+/* Left Side Div */
+.PPleftDiv {
+  width: 43.5%;
+}
+.imageHolderDiv {
+  width: 100%;
+  height: 472px;
+  border-radius: 4px;
+  border: 1px solid rgb(240, 240, 240);
+  position: relative;
+  padding: 15px;
+}
+.imageHolderDiv img {
+  margin: auto;
+  width: 100%;
+  height: 100%;
+}
+.CartAndBuyDiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 30px 20px;
+  gap: 10px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 8px;
+  border-bottom: 1px solid rgb(214, 212, 212);
+}
+.ProductCartLink {
+  display: flex;
+  cursor: pointer;
+  font-style: normal;
+  text-align: center;
+  letter-spacing: 0.0015em;
+  font-size: 18px;
+  line-height: 20px;
+  border-radius: 4px;
+  color: black;
+  background: rgb(255, 255, 255);
+  border: 1px solid black;
+  padding: 12px;
+  justify-content: center;
+  width: 48%;
+  font-weight: 600;
+}
+.ProductCartLink:hover {
+}
+.ProductCartLink h1 {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.ProductBuyLink {
+  cursor: pointer;
+  font-style: normal;
+  text-align: center;
+  letter-spacing: 0.0015em;
+  font-size: 18px;
+  line-height: 20px;
+  border-radius: 4px;
+  color: rgb(255, 255, 255);
+  background: rgb(244, 51, 151);
+  border: none;
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  width: 48%;
+  font-weight: 600;
+}
+.ProductBuyLink:hover {
+  background: rgb(251, 76, 166);
+}
+.ProductBuyLink h1 {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.SimProDiv {
+  margin-top: 20px;
+}
+
+.SimProDiv h1 {
+  color: rgb(51, 51, 51);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+  display: flex;
+}
+.SimProDiv h1 p {
+  margin-right: 8px;
+}
+.SimProImgDiv {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+.SimProImg {
+  margin-left: 12px;
+  width: 80px;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: rgb(240, 240, 240);
+  height: 94px;
+  border: 2.21348px solid rgb(244, 51, 151);
+  transition: transform 0.6s ease-in-out 0s;
+}
+
+/* Right Side Div */
+
+.PPrightDiv {
+  border: 1px solid blue;
+  width: 53.5%;
+}
