@@ -470,9 +470,9 @@ function NavBar() {
       <div className="upperNaV">
         {/* Upper Nav Left Elements */}
         <div className="upperNav_left">
-          <h1 onClick={() => <Navigate to="/" />} className="meshopLogo">
+          <Link to="/" className="meshopLogo">
             meShop
-          </h1>
+          </Link>
           {/* Search Form */}
           <form
             className="navSearchForm"
