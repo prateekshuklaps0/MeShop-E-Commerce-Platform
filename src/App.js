@@ -7,6 +7,7 @@ import ScrollToTop from "./Pages/ScrollToTop";
 import PageNotFound from "./Pages/PageNotFound";
 import Landing from "./Pages/LandingPage";
 import SingleProduct from "./Pages/SingleProductPage";
+import { SignUpPage } from "./Pages/SignUpPage";
 // ******************
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/product/:productId" element={<SingleProduct />} />
+        <Route path="/signup" element={<SignUpPage />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
       {/* ******************** */}

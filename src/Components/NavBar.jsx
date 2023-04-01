@@ -433,7 +433,9 @@ function NavBar() {
       >
         <h1>Hello User</h1>
         <p>To access your MeShop account</p>
-        <button>{"Sign Up"}</button>
+        <button className="SignUpButton">
+          <Link to="/signup">{"Sign Up"}</Link>
+        </button>
         <div className="NavBarMyOrderCont">
           <svg
             viewBox="0 0 28 28"
