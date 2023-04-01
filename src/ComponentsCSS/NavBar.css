@@ -229,6 +229,7 @@
   overflow-x: hidden;
   max-height: "400px";
   padding: 20px 15px;
+  z-index: 700;
   margin-left: 0px;
 }
 .searchPopup h1 {
