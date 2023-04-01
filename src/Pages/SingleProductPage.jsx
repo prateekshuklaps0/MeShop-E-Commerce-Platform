@@ -37,7 +37,7 @@ function SingleProduct() {
 
   return (
     <div>
-      {/* <NavBar /> */}
+      <NavBar />
       <SingleProductDetails detail={requiredObj} />
       <Faq />
       <Footer />
