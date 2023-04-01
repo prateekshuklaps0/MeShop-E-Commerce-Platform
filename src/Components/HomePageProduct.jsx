@@ -1,7 +1,19 @@
 import "../ComponentsCSS/HomePageProduct.css";
 import { NavLink, Navigate, Link } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
-import { Spinner } from "@chakra-ui/react";
+import {
+  Spinner,
+  Checkbox,
+  CheckboxGroup,
+  Radio,
+  RadioGroup,
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
+  AccordionIcon,
+  Box,
+} from "@chakra-ui/react";
 
 // Import Data
 import {
@@ -105,14 +117,94 @@ function CateAndProductCont() {
     "Ratings",
     "Discount",
   ];
+  const CateFilterOptionsList = [
+    {
+      value: "Beauty & Health",
+      label: "Beauty & Health",
+      data: BeautyHealthList,
+      checked: false,
+      color: "grey",
+    },
+    {
+      value: "Electronics",
+      label: "Electronics",
+      data: ElectronicsList,
+      checked: false,
+      color: "grey",
+    },
+    {
+      value: "Men",
+      label: "Men",
+      data: MenList,
+      checked: false,
+      color: "grey",
+    },
+    {
+      value: "Jewellery & Accessories",
+      label: "Jewellery & Accessories",
+      data: JewelleryAccessoriesList,
+      checked: false,
+      color: "grey",
+    },
+    {
+      value: "Women Ethnic",
+      label: "Women Ethnic",
+      data: WomenEthnicList,
+      checked: false,
+      color: "grey",
+    },
+    {
+      value: "Home & Kitchen",
+      label: "Home & Kitchen",
+      data: HomeKitchenList,
+      checked: false,
+      color: "grey",
+    },
+    {
+      value: "Kids",
+      label: "Kids",
+      data: KidsList,
+      checked: false,
+      color: "grey",
+    },
+    {
+      value: "Bags & Footwear",
+      label: "Bags & Footwear",
+      data: BagsFootwearList,
+      checked: false,
+      color: "grey",
+    },
+    {
+      value: "Women Western",
+      label: "Women Western",
+      data: WomenWesternList,
+      checked: false,
+      color: "grey",
+    },
+  ];
+  const RestFilterOptions = [
+    "Color",
+    "Discount",
+    "Brand",
+    "Warranty",
+    "Size",
+    "Combo",
+  ];
 
   const [sortOption, setSortOption] = useState(sortOptions[0]);
   const [sortDropDown, setsortDropDown] = useState(false);
   const [swapLoading, setSwapLoading] = useState(false);
+  const [showFilterDropDown, setShowFilterDropDown] = useState(false);
+  const [toggleSortFilter, setToggleSortFilter] = useState(true);
+  const [checkedIndex, setCheckedIndex] = useState(null);
+  const [FilterHeading, setFilterHeading] = useState("");
+  const [FilteredCateData, setFilteredCateData] = useState([...ProductsList]);
+
   const sortDDRef = useRef(null);
 
   const handleSortDropDown = () => {
     setsortDropDown((prev) => !prev);
+    setToggleSortFilter((prev) => true);
   };
 
   const handleSortOptionChange = (option) => {
@@ -122,35 +214,59 @@ function CateAndProductCont() {
     setSwapLoading(true);
     setTimeout(() => {
       setSwapLoading((prev) => false);
-    }, 700);
+    }, 500);
   };
 
   // Sorting Products
   const [presentProducts, setpresentProducts] = useState([...ProductsList]);
 
   useEffect(() => {
-    if (sortOption == "Price (High to Low)") {
-      setpresentProducts((prev) =>
-        [...ProductsList].sort(function (a, b) {
-          return b.price - a.price;
-        })
-      );
-    } else if (sortOption == "Price (Low to High)") {
-      setpresentProducts((prev) =>
-        [...ProductsList].sort(function (a, b) {
-          return a.price - b.price;
-        })
-      );
-    } else if (sortOption == "Ratings") {
-      setpresentProducts((prev) =>
-        [...ProductsList].sort(function (a, b) {
-          return b.rating - a.rating;
-        })
-      );
+    if (toggleSortFilter) {
+      setCheckedIndex((prev) => null);
+      if (sortOption == "Price (High to Low)") {
+        setpresentProducts((prev) =>
+          [...ProductsList].sort(function (a, b) {
+            return b.price - a.price;
+          })
+        );
+      } else if (sortOption == "Price (Low to High)") {
+        setpresentProducts((prev) =>
+          [...ProductsList].sort(function (a, b) {
+            return a.price - b.price;
+          })
+        );
+      } else if (sortOption == "Ratings") {
+        setpresentProducts((prev) =>
+          [...ProductsList].sort(function (a, b) {
+            return b.rating - a.rating;
+          })
+        );
+      } else {
+        setpresentProducts((prev) => [...ProductsList]);
+      }
     } else {
-      setpresentProducts((prev) => ProductsList);
+      setpresentProducts((prev) => [...FilteredCateData]);
     }
-  }, [presentProducts]);
+  }, [presentProducts, toggleSortFilter, FilterHeading, FilteredCateData]);
+
+  // Cate Filter Checkbox
+
+  const handleCheckboxChange = (index, text, data) => {
+    if (index === checkedIndex) {
+      setCheckedIndex(null);
+      setToggleSortFilter((prev) => true);
+    } else {
+      setCheckedIndex(index);
+      setToggleSortFilter((prev) => false);
+      setFilterHeading((prev) => text);
+      setFilteredCateData((prev) => [...data]);
+      setSortOption(sortOptions[0]);
+      setSwapLoading(true);
+      setTimeout(() => {
+        setSwapLoading((prev) => false);
+      }, 500);
+    }
+  };
 
   return (
     <div className="CateAndProductCont">
@@ -182,6 +298,104 @@ function CateAndProductCont() {
         )}
 
         {/* Filter  */}
+        <div className="FilterCont">
+          <div className="HeadingFilter">
+            <h2>FILTERS</h2>
+            <h3>1000+ Products</h3>
+          </div>
+          {/* Category Filter */}
+          <div className="CategoryFilterCont">
+            <div
+              onClick={() => setShowFilterDropDown((prev) => !prev)}
+              className="CateFiltHead"
+            >
+              <h4 className="FilterNames">Category</h4>
+              <Arrow state={showFilterDropDown} />
+            </div>
+            {showFilterDropDown && (
+              <div className="FilterOptions">
+                <div className="FilterSearchCont">
+                  <svg
+                    width="100%"
+                    height="100%"
+                    viewBox="0 0 20 20"
+                    fill="greyT2"
+                    xmlns="http://www.w3.org/2000/svg"
+                    iconSize="20"
+                    class="sc-gswNZR jweCCb"
+                  >
+                    <g clip-path="url(#clip0)">
+                      <path
+                        d="M19.77 18.6702L16.01 14.9102C17.33 13.3302 18.13 11.3002 18.13 9.08024C18.13 4.06024 14.07 0.000244141 9.06 0.000244141C4.06 0.000244141 0 4.06024 0 9.08024C0 14.1002 4.06 18.1602 9.06 18.1602C11.29 18.1602 13.33 17.3502 14.91 16.0102L18.67 19.7702C18.97 20.0702 19.47 20.0702 19.77 19.7702C20.08 19.4702 20.08 18.9702 19.77 18.6702ZM9.06 16.6002C4.92 16.6002 1.55 13.2302 1.55 9.08024C1.55 4.93024 4.92 1.56024 9.06 1.56024C13.2 1.56024 16.57 4.93024 16.57 9.08024C16.57 13.2302 13.2 16.6002 9.06 16.6002Z"
+                        fill="#666666"
+                      ></path>
+                    </g>
+                    <defs>
+                      <clipPath id="clip0">
+                        <rect
+                          width="20"
+                          height="20"
+                          fill="white"
+                          transform="translate(0 0.000244141)"
+                        ></rect>
+                      </clipPath>
+                    </defs>
+                  </svg>
+                  <input
+                    className="FilterSearch"
+                    type="text"
+                    placeholder="Search"
+                  />
+                </div>
+                {/* <p>
+                {checkedIndex !== null
+                  ? CateFilterOptionsList[checkedIndex].label
+                  : ""}
+              </p> */}
+                <form className="FilterCateForm">
+                  {CateFilterOptionsList.map((item, ind) => {
+                    return (
+                      <label className="FilterCateLabel" key={ind + item + ind}>
+                        <Checkbox
+                          onChange={() =>
+                            handleCheckboxChange(ind, item.value, item.data)
+                          }
+                          value={item.value}
+                          isChecked={ind === checkedIndex}
+                          data={item.data}
+                          size="md"
+                          colorScheme="pink"
+                          borderColor="black.500"
+                          color={ind == checkedIndex ? "black" : "grey"}
+                        >
+                          {item.label}
+                        </Checkbox>
+                      </label>
+                    );
+                  })}
+                </form>
+              </div>
+            )}
+          </div>
+          {/* Rest Options */}
+          {RestFilterOptions.map((item, ind) => (
+            <Accordion allowToggle>
+              <AccordionItem>
+                <h2>
+                  <AccordionButton>
+                    <Box as="span" flex="1" textAlign="left">
+                      {item}
+                    </Box>
+                    <AccordionIcon />
+                  </AccordionButton>
+                </h2>
+                <AccordionPanel pb={4}>
+                  This Filter is not Available Now.
+                </AccordionPanel>
+              </AccordionItem>
+            </Accordion>
+          ))}
+        </div>
       </div>
 
       {/* Products Box Div */}
