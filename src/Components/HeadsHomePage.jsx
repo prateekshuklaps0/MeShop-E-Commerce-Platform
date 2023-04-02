@@ -1,6 +1,7 @@
 import "../ComponentsCSS/HeadsHomePage.css";
 import { NavLink, Navigate, Link } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
+import { Progress } from "@chakra-ui/react";
 
 // Image Imports
 // First Head Images
@@ -276,6 +277,13 @@ function SixthHead() {
 
 // Main Function
 function HeadsHomePage() {
+  const [SwapLoading, setSwapLoading] = useState(false);
+  useEffect(() => {
+    setSwapLoading(true);
+    setTimeout(() => {
+      setSwapLoading((prev) => false);
+    }, 2000);
+  }, []);
   return (
     <div className="HeadContainer">
       <FirstHeader />

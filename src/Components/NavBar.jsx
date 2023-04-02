@@ -1,6 +1,7 @@
 import "../ComponentsCSS/NavBar.css";
 import { NavLink, Navigate, Link } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
+import { Progress } from "@chakra-ui/react";
 
 // Image Imports
 import GPStoreImg from "../Images/StoreButtons/GPButton.jpg";
@@ -347,6 +348,13 @@ function NavBar() {
   const formRef = useRef(null);
   const [navSearchValue, setnavSearchValue] = useState("");
   const [searchPopUpDiv, setsearchPopUpDiv] = useState(false);
+  const [SwapLoading, setSwapLoading] = useState(false);
+  useEffect(() => {
+    setSwapLoading(true);
+    setTimeout(() => {
+      setSwapLoading((prev) => false);
+    }, 1000);
+  }, []);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -433,9 +441,9 @@ function NavBar() {
       >
         <h1>Hello User</h1>
         <p>To access your MeShop account</p>
-        <button className="SignUpButton">
-          <Link to="/signup">{"Sign Up"}</Link>
-        </button>
+        <Link to="/signup">
+          <button className="SignUpButton">{"Sign Up"}</button>
+        </Link>
         <div className="NavBarMyOrderCont">
           <svg
             viewBox="0 0 28 28"
@@ -657,6 +665,9 @@ function NavBar() {
       {/* Nav Bar Lower Part */}
       <div className="cateNav">{<NavCateTitle />}</div>
       {/*  */}
+      {SwapLoading && (
+        <Progress className="NavProgress" size="xs" isIndeterminate />
+      )}
     </nav>
   );
 }

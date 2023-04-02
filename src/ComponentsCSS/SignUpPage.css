@@ -1,0 +1,240 @@
+.animatedDiv {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.meshopAnimated {
+  z-index: 1000;
+  position: absolute;
+  font-family: "Merienda", cursive;
+  font-weight: bold;
+  font-size: 400%;
+  color: rgb(244, 51, 151);
+  letter-spacing: 2px;
+  cursor: pointer;
+  top: 40%;
+  left: 40%;
+  right: 40%;
+  margin: auto;
+}
+.NAV2Container {
+  z-index: 1000;
+  background-color: white;
+  position: absolute;
+  width: 100%;
+}
+.NAV2RightCont {
+  width: 353px;
+}
+.NAV2dropdown {
+  top: 71px;
+  z-index: 1400;
+}
+
+/* SignUp */
+
+.SignUpAndOTPContainer {
+  padding-top: 95px;
+  padding-bottom: 80px;
+  background-color: rgb(255, 231, 243);
+}
+.SignUpCont {
+  height: 708px;
+  margin: auto;
+  width: 433px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgb(240, 240, 240);
+}
+.SignUpCont img {
+  width: 433px;
+  aspect-ratio: auto 433 / 200;
+  height: 200px;
+}
+.SignUpAndOtpForm {
+  text-align: left;
+  background-color: rgb(255, 255, 255);
+  border-radius: 8px;
+  margin-top: 40px;
+  padding-left: 48px;
+  padding-right: 48px;
+}
+.SignUpAndOtpForm h1 {
+  color: rgb(51, 51, 51);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+}
+.PhoneCont {
+  display: flex;
+  height: 60px;
+  align-items: flex-end;
+  background-color: rgb(255, 255, 255);
+  border-radius: 8px;
+  margin-top: 26px;
+}
+.countryCont {
+  display: flex;
+  flex-direction: column;
+  width: 90px;
+  margin-right: 12px;
+}
+.countryCont p {
+  color: rgb(153, 153, 153);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  margin: 0px;
+  padding: 2px 0px;
+}
+.countryCont h2 {
+  color: rgb(51, 51, 51);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  margin: 0px;
+  padding: 8px 0px 7px;
+  display: flex;
+  align-items: baseline;
+  border-bottom: 2px solid rgb(192, 192, 192);
+  width: 70px;
+}
+.countryCont h2 span {
+  font-size: 13px;
+  margin-right: 5px;
+}
+#PhoneNumberInputLabel {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  color: rgb(244, 51, 151);
+  transition: all 0.2s ease 0s;
+  padding-bottom: 4px;
+}
+.countryCont input {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 235px;
+  padding-top: 6px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  font-style: normal;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-image: initial;
+  background-color: transparent;
+  outline: none;
+  padding: 8px 0px 7px;
+  transition: all 0.2s ease 0s;
+  caret-color: rgb(244, 51, 151);
+  z-index: 1;
+  color: rgb(153, 153, 153);
+  border-bottom: 1px solid rgb(223, 223, 223);
+}
+.ContinueButton {
+  width: 100%;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  font-style: normal;
+  letter-spacing: 0.0015em;
+  font-size: 15px;
+  line-height: 20px;
+  border-radius: 4px;
+  background-color: rgb(244, 51, 151);
+  padding: 12px;
+  margin-top: 40px;
+}
+.SignUpTerCondCont {
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.012em;
+  flex-direction: column;
+  bottom: 0px;
+  left: 104px;
+  right: 104px;
+  font-size: 12px;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  margin-top: 200px;
+}
+.termconduppertext {
+  color: rgb(153, 153, 153);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  padding: 0px;
+}
+.termcondlowertext {
+  display: flex;
+  margin: auto;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  margin: 0px 0px 20px;
+  padding: 0px;
+  text-align: center;
+  color: rgb(153, 153, 153);
+}
+.termcondspantext {
+  color: rgb(244, 51, 151);
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+/* Otp Css */
+
+.OtpForm h6 {
+  display: inline-block;
+  margin-top: 12px;
+  cursor: pointer;
+  color: rgb(244, 51, 151);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+}
+.OTPBOX {
+  margin: auto;
+  margin-top: 40px;
+  width: 90%;
+}
+
+.OTPBOX input {
+  width: 100%;
+  height: 3.25rem;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+  border-bottom: 2px solid rgb(198, 196, 196);
+  border-style: solid;
+  outline: none;
+  margin: 0px 8px;
+  letter-spacing: 2.5625rem;
+  /* width: 2.5625rem !important; */
+}
+
+.OTPBOX input::after {
+  content: "";
+  display: block;
+  width: 100%;
+  border-bottom: 2px solid black;
+  position: absolute;
+}
+.OTPBOX input:focus {
+  outline: none;
+}
