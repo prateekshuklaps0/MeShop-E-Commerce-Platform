@@ -1,0 +1,69 @@
+.animatedDiv {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.meshopAnimated {
+  z-index: 1000;
+  position: absolute;
+  font-family: "Merienda", cursive;
+  font-weight: bold;
+  font-size: 400%;
+  color: rgb(244, 51, 151);
+  letter-spacing: 2px;
+  cursor: pointer;
+  top: 40%;
+  left: 40%;
+  right: 40%;
+  margin: auto;
+}
+.NAV2Container {
+  z-index: 1000;
+  background-color: white;
+  position: absolute;
+  width: 100%;
+}
+.NAV2RightCont {
+  width: 353px;
+}
+.NAV2dropdown {
+  top: 71px;
+  z-index: 1400;
+}
+
+/* SignUp */
+
+/* height: 708px;
+    width: 433px; 
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    border: 1px solid rgb(240, 240, 240);
+
+
+
+    
+    */
+
+.SignUpAndOTPContainer {
+  padding-top: 95px;
+  padding-bottom: 80px;
+  background-color: rgb(255, 223, 239);
+}
+.SignUpCont {
+  height: 708px;
+  margin: auto;
+  width: 433px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgb(240, 240, 240);
+}
+.SignUpCont img {
+  width: 433px;
+  aspect-ratio: auto 433 / 200;
+  height: 200px;
+}
+.SignUpAndOtpForm {
+}
+.SignUpAndOtpForm h1 {
+}
