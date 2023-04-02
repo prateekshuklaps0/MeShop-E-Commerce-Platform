@@ -1,7 +1,9 @@
 import "../ComponentsCSS/NavBar.css";
 import { NavLink, Navigate, Link } from "react-router-dom";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useContext } from "react";
 import { Progress } from "@chakra-ui/react";
+
+import AuthContext from "../Contexts/AuthContext";
 
 // Image Imports
 import GPStoreImg from "../Images/StoreButtons/GPButton.jpg";
@@ -342,7 +344,11 @@ function CategoriesPopUp({ cateTitle, onMouseEnter }) {
 }
 // ********************
 
+// This is to Indicate SignUp Page to Logout
+var SetLogOut = false;
+
 function NavBar() {
+  const { isLoggedIn, logout } = useContext(AuthContext);
   // Nav Bar Search Input
   const navSearchInpRef = useRef(null);
   const formRef = useRef(null);
@@ -441,9 +447,20 @@ function NavBar() {
       >
         <h1>Hello User</h1>
         <p>To access your MeShop account</p>
-        <Link to="/signup">
-          <button className="SignUpButton">{"Sign Up"}</button>
-        </Link>
+        {/*  */}
+        {isLoggedIn ? (
+          <Link>
+            <button onClick={logout} className="SignUpButton">
+              Log Out
+            </button>
+          </Link>
+        ) : (
+          <Link>
+            <button className="SignUpButton">Sign Up</button>
+          </Link>
+        )}
+
+        {/*  */}
         <div className="NavBarMyOrderCont">
           <svg
             viewBox="0 0 28 28"
@@ -671,4 +688,4 @@ function NavBar() {
     </nav>
   );
 }
-export default NavBar;
+export { NavBar, SetLogOut };

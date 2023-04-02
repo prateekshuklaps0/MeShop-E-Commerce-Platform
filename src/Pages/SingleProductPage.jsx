@@ -1,8 +1,9 @@
-import NavBar from "../Components/NavBar";
+import { NavBar } from "../Components/NavBar";
 import SingleProductDetails from "../Components/SingleProductDetails";
 import { HomePageProduct, GenerateCards } from "../Components/HomePageProduct";
 import Faq from "../Components/Faq";
 import Footer from "../Components/Footer";
+import { AnimatedSkeleton } from "./SignUpPage";
 import { NavLink, Navigate, Link, useParams } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
 
@@ -33,6 +34,14 @@ function SingleProduct() {
 
   useEffect(() => {
     SetRequiredObj((prev) => SearchByProductId(productId));
+  }, []);
+
+  const [SwapLoading, setSwapLoading] = useState(false);
+  useEffect(() => {
+    setSwapLoading(true);
+    setTimeout(() => {
+      setSwapLoading((prev) => false);
+    }, 800);
   }, []);
 
   return (

@@ -1,6 +1,8 @@
 import "../ComponentsCSS/SignUpPage.css";
-import { NavLink, Navigate, Link } from "react-router-dom";
-import { useState, useRef, useEffect } from "react";
+import { SetLogOut } from "../Components/NavBar";
+import { NavLink, Navigate, Link, useNavigate } from "react-router-dom";
+import { useState, useRef, useEffect, useContext } from "react";
+import AuthContext from "../Contexts/AuthContext";
 import OTPInput from "react-otp-input";
 // Image Imports
 import GPStoreImg from "../Images/StoreButtons/GPButton.jpg";
@@ -10,6 +12,10 @@ import SignUpIMG from "../Images/SignUpPage/SignUpPage.webp";
 import {
   Spinner,
   Checkbox,
+  Alert,
+  AlertIcon,
+  AlertTitle,
+  AlertDescription,
   CheckboxGroup,
   useToast,
   Button,
@@ -328,6 +334,9 @@ const NavType2 = () => {
 
 // SignUp Container
 function SignUpContent() {
+  const { login } = useContext(AuthContext);
+
+  const navigate = useNavigate();
   const toast = useToast();
   const [showInputLable, setShowInputLabel] = useState(false); // To Show Phone Number Text above Phone Number Entered
 
@@ -424,14 +433,17 @@ function SignUpContent() {
   const Verify = () => {
     if (EnteredOTP == resendOTP) {
       toast({
-        title: `Successfull`,
-        status: "success",
+        title: `LogIn Successfull`,
         position: "top",
+        status: "success",
         isClosable: true,
       });
+      login();
+      navigate("/");
+      return null;
     } else {
       toast({
-        title: `Wrong OTP`,
+        title: `Enter The Correct OTP`,
         status: "error",
         position: "top",
         isClosable: true,
@@ -544,49 +556,6 @@ function SignUpContent() {
           </div>
         </div>
       </ScaleFade>
-
-      {/* Alerts*/}
-
-      {/* Invalid Mobile Number */}
-      {/* {invalidNumEr &&
-        toast({
-          title: `Enter Valid Phone Number`,
-          status: "warning",
-          isClosable: true,
-        })} */}
-
-      {/* OTP Sent Alert
-      {showOTP &&
-        toast({
-          title: `OTP Sent`,
-          status: "success",
-          isClosable: true,
-        })} */}
-
-      {/* Otp Recieved Alert */}
-      {/* {showOTP &&
-        toast({
-          title: `Your OTP for MeShop login is ${generatedOTP}`,
-          // status: "success",
-          position: "bottom-right",
-          isClosable: true,
-        })} */}
-
-      {/* Resend Otp
-      {resendOTP &&
-        toast({
-          title: `Your OTP for MeShop login is ${generatedOTP}`,
-          // status: "success",
-          position: "bottom-right",
-          isClosable: true,
-        })} */}
-
-      {/* Wrong OTP Entered Alert
-        {!WrongOTP && toast({
-        title: `Wrong OTP Entered`,
-        status: "warning",
-        isClosable: true,
-      })} */}
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import "./App.css";
 import React from "react";
-import { Routes, Route, NavLink } from "react-router-dom";
+import { Routes, Route, Navigate, Link, useParams } from "react-router-dom";
+import { useState, useRef, useEffect } from "react";
 
 // Pages
 import ScrollToTop from "./Pages/ScrollToTop";
@@ -22,16 +23,6 @@ function App() {
         <Route path="*" element={<PageNotFound />} />
       </Routes>
       {/* ******************** */}
-
-      {/* <div
-        style={{
-          backgroundColor: "cyan",
-          height: "1200px",
-          marginTop: "200px",
-        }}
-      >
-        Test Div
-      </div> */}
     </div>
   );
 }
