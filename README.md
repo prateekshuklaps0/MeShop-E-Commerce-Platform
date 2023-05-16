@@ -25,12 +25,4 @@ React / Chakra UI / React Icons / Framer Motion / Ant Design / Chakra UI Icons /
 
 
 
-![FAQ Page](./src/Images/ReadMeImgs/FAQ.png)
 
-![Enter App Page](./src/Images/ReadMeImgs/ProductPage.png)
-
-![Buy Stocks Page](./src/Images/ReadMeImgs/BuyStocksModal.png)
-
-![Account Page](./src/Images/ReadMeImgs/Account.png)
-
-![BookMarks](./src/Images/ReadMeImgs/BookMarks.png)
