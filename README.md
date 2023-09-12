@@ -4,7 +4,7 @@
 
 MeShop is an e-commerce platform for resellers to showcase and sell products, while providing suppliers access to a vast network of resellers and customers.
 
-Deployed Link - [https://impolite-support-6582.netlify.app/](https://impolite-support-6582.netlify.app/)
+Deployed Link - [https://impolite-support-6582.netlify.app](https://impolite-support-6582.netlify.app/)
 
 ## Features:-
 
