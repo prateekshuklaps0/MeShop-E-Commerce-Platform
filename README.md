@@ -1,4 +1,4 @@
-# [meShop](https://meshop-prateekshukla-pnxqjj4bt-prateekshuklaps0.vercel.app/)
+# [meShop](https://meshop-prateekshukla.vercel.app)
 
 # What is meShop about?
 
